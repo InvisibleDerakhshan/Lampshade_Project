@@ -19,7 +19,7 @@ namespace ShopManagement.Infrastructure.EfCore.Repository
         {
             return _context.productCategories.Select(x => new EditProductCategory()
             {
-                Id = id,
+                Id = x.Id,
                 Description = x.Description,
                 Name = x.Name,
                 Keywords = x.Keywords,
