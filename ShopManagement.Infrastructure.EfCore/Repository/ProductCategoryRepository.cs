@@ -32,7 +32,14 @@ namespace ShopManagement.Infrastructure.EfCore.Repository
 
         }
 
-
+        public List<ProductCategoryViewModel> GetProductCategories()
+        {
+            return _context.productCategories.Select(x => new ProductCategoryViewModel
+            {
+                Id=x.Id,
+                Name=x.Name
+            }).ToList();
+        }
 
         public List<ProductCategoryViewModel> Search(ProductCategorySearchModel searchModel)
         {

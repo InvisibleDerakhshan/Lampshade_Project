@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
+using ShopManagement.Domain.ProductAgg;
 using ShopManagement.Domain.ProductCategoryAgg;
 using System;
 
@@ -10,8 +11,8 @@ namespace ShopManagement.Infrastructure.EfCore.Mapping
         public void Configure(EntityTypeBuilder<ProductCategory> builder)
         {
             builder.ToTable("ProductCategories");
-            builder.HasKey(x=>x.Id);
-            builder.Property(x=>x.Name).HasMaxLength(255).IsRequired();
+            builder.HasKey(x => x.Id);
+            builder.Property(x => x.Name).HasMaxLength(255).IsRequired();
             builder.Property(x => x.Description).HasMaxLength(500);
             builder.Property(x => x.Picture).HasMaxLength(1000);
             builder.Property(x => x.PictureAlt).HasMaxLength(255);
@@ -20,6 +21,9 @@ namespace ShopManagement.Infrastructure.EfCore.Mapping
             builder.Property(x => x.MetaDescription).HasMaxLength(150).IsRequired();
             builder.Property(x => x.Slug).HasMaxLength(300).IsRequired();
 
+            builder.HasMany(x => x.Products)
+                .WithOne(x => x.Category)
+                .HasForeignKey(x => x.CategoryId);
 
 
         }
