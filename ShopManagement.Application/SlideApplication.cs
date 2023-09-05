@@ -24,14 +24,14 @@ namespace ShopManagement.Application
             var operation = new OperationResult();
             var slide = new Slide(command.Picture, command.PictureAlt
                 , command.PictureTitle, command.Heading
-                , command.Title, command.Text, command.BtnText);
+                , command.Title, command.Text,command.Link, command.BtnText);
 
             _slideRepository.Create(slide);
             _slideRepository.SaveChanges();
             return operation.Succedded();
         }
 
-        public OperationResult Edit(EditSlide command)
+        public OperationResult Edit(EditSlide command) 
         {
             var operation = new OperationResult();
             var slide = _slideRepository.Get(command.Id);
@@ -40,7 +40,7 @@ namespace ShopManagement.Application
 
             slide.Edit(command.Picture, command.PictureAlt
                 , command.PictureTitle, command.Heading
-                , command.Title, command.Text, command.BtnText);
+                , command.Title, command.Text,command.Link, command.BtnText);
 
             _slideRepository.SaveChanges();
             return operation.Succedded();

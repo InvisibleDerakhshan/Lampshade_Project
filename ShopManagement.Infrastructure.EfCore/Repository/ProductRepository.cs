@@ -1,4 +1,5 @@
-﻿using _0_Framework.Domain.Infrastructure;
+﻿using _0_Framework.Application;
+using _0_Framework.Domain.Infrastructure;
 using Microsoft.EntityFrameworkCore;
 using ShopManagement.Application.Contracts.Product;
 using ShopManagement.Domain.ProductAgg;
@@ -23,7 +24,7 @@ namespace ShopManagement.Infrastructure.EfCore.Repository
         {
             return _context.Products.Select(x => new EditProduct
             {
-                Id = id,
+                Id = x.Id,
                 Name = x.Name,
                 Code = x.Code,
                 Slug = x.Slug,
@@ -63,7 +64,7 @@ namespace ShopManagement.Infrastructure.EfCore.Repository
                     Picture = x.Picture,
                     UnitPrice = x.UnitPrice,
                     IsInStock = x.IsInStock,
-                    CreationDate = x.CreationDate.ToString()
+                    CreationDate = x.CreationDate.ToFarsi()
                 });
 
             if (!string.IsNullOrWhiteSpace(searchModel.Name))

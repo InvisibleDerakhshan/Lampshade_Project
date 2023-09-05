@@ -1,4 +1,5 @@
-﻿using _0_Framework.Domain.Infrastructure;
+﻿using _0_Framework.Application;
+using _0_Framework.Domain.Infrastructure;
 using ShopManagement.Application.Contracts.Slide;
 using ShopManagement.Domain.SlideAgg;
 using System;
@@ -21,13 +22,14 @@ namespace ShopManagement.Infrastructure.EfCore.Repository
         {
             return _context.Slides.Select(x => new EditSlide
             {
-                Id = id,
+                Id = x.Id,
                 BtnText = x.BtnText,
                 Heading = x.Heading,
                 Picture = x.Picture,
                 PictureAlt = x.PictureAlt,
                 PictureTitle = x.PictureTitle,
                 Text = x.Text,
+                Link= x.Link,
                 Title = x.Title,
             }).FirstOrDefault(x => x.Id == id);
         }
@@ -41,7 +43,7 @@ namespace ShopManagement.Infrastructure.EfCore.Repository
                 Picture = x.Picture,
                 Title = x.Title,
                 IsRemoved = x.IsRemoved,
-                CreationDate = x.CreationDate.ToString()
+                CreationDate = x.CreationDate.ToFarsi()
             }).OrderByDescending(x => x.Id).ToList();
         }
     }

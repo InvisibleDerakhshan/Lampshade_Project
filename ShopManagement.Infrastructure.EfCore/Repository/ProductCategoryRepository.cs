@@ -1,4 +1,5 @@
-﻿using _0_Framework.Domain.Infrastructure;
+﻿using _0_Framework.Application;
+using _0_Framework.Domain.Infrastructure;
 using ShopManagement.Application.Contracts.ProductCategory;
 using ShopManagement.Domain.ProductCategoryAgg;
 using System.Collections.Generic;
@@ -48,7 +49,7 @@ namespace ShopManagement.Infrastructure.EfCore.Repository
                 Id = x.Id,
                 Picture = x.Picture,
                 Name = x.Name,
-                CreationDate = x.CreationDate.ToString()
+                CreationDate = x.CreationDate.ToFarsi()
 
             });
 
