@@ -1,4 +1,4 @@
-﻿using _01_LampshadeQuery.Contract.Slide;
+﻿using _01_LampshadeQuery.Contracts.Slide;
 using ShopManagement.Infrastructure.EfCore;
 using System;
 using System.Collections.Generic;

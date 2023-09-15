@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace _01_LampshadeQuery.Contract.Slide
+namespace _01_LampshadeQuery.Contracts.Slide
 {
     public class SlideQueryModel
     {

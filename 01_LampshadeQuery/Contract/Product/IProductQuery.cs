@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace _01_LampshadeQuery.Contracts.Slide
+namespace _01_LampshadeQuery.Contracts.Product
 {
-    public interface ISlideQuery
+    public interface IProductQuery
     {
-        List<SlideQueryModel> GetSlides();
+        List<ProductQueryModel> GetLatestArrivals();
     }
 }

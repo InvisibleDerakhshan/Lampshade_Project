@@ -23,10 +23,9 @@ namespace ShopManagement.Domain.SlideAgg
             PictureTitle = pictureTitle;
             Heading = heading;
             Title = title;
-            Text = text;
-            Link = link;
+            Text = text;    
             BtnText = btnText;
-            
+            Link = link;
             IsRemoved = false;
         }
 

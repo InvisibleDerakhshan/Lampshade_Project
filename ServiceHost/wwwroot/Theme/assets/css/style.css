@@ -2350,9 +2350,9 @@ select {
 	color: #e33;
 }
 
-.single-grid-product__price {
-	font-family: IRANSans, sans-serif;
-}
+/*.single-grid-product__price{
+	font-family : IRANSans , sans-serif;
+}*/
 
 .single-grid-product__price .main-price {
 	font-size: 16px;

@@ -9,13 +9,13 @@ namespace ShopManagement.Domain.ProductAgg
     public class Product : EntityBase
     {
         public Product(string name, string code
-            , string ShortDescription, string description, string picture,
+            , string shortDescription, string description, string picture,
             string pictureAlt, string pictureTitle, 
             long categoryId, string slug, string keywords, string metaDescription)
         {
             Name = name;
             Code = code;
-            this.ShortDescription = ShortDescription;
+            ShortDescription = shortDescription;
             Description = description;
             Picture = picture;
             PictureAlt = pictureAlt;
