@@ -184,8 +184,38 @@ function handleAjaxCall(method, url, data) {
     }
 }
 
+jQuery.validator.addMethod("maxFileSize",
+    function (value, element, params) {
+        var size = element.files[0].size;
+        var maxSize = 3 * 1024 * 1024;
+        if (size > maxSize)
+            return false;
+        else {
+            return true;
+        }
+    });
+jQuery.validator.unobtrusive.adapters.addBool("maxFileSize");
+
+jQuery.validator.addMethod("ExtensionFiles",
+    function (value, element, params) {
+        var extention = element.files[0].type.split("/")[1];
+       /* var validateExtensions = element.dataset.valExtensionfiles*/;
+
+        var validFileExtensions = [".jpg", ".jpeg", ".png"];
+
+        var ext = extention.toLowerCase();
+        if (!validFileExtensions.includes(ext)) {
+            return false;
+        }
+        else {
+            return true;
+        }
+    }),
+    jQuery.validator.unobtrusive.adapters.addBool("ExtensionFiles");
+
 //jQuery.validator.addMethod("maxFileSize",
 //    function (value, element, params) {
+
 //        var size = element.files[0].size;
 //        var maxSize = 3 * 1024 * 1024;
 //        if (size > maxSize)
@@ -195,3 +225,9 @@ function handleAjaxCall(method, url, data) {
 //        }
 //    });
 //jQuery.validator.unobtrusive.adapters.addBool("maxFileSize");
+
+//jQuery.validator.addMethod("extension",
+//    function (value, element, param) {
+//    param = typeof param === "string" ? param.replace(/,/g, '|') : "png|jpeg|jpg";
+//    return this.optional(element) || value.match(new RegExp(".(" + param + ")$", "i"));
+//}, jQuery.format("Please enter a value with a valid extension."));
