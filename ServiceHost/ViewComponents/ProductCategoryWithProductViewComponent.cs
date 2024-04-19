@@ -4,19 +4,21 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace ServiceHost.ViewComponents
 {
-    public class LatestArrivalsViewComponent : ViewComponent
-    {
-        private readonly IProductQuery _productQuery;
 
-        public LatestArrivalsViewComponent(IProductQuery productQuery)
+    public class ProductCategoryWithProductViewComponent : ViewComponent
+    {
+        private readonly IProductCategoryQuery _productCategoryQuery;
+
+        public ProductCategoryWithProductViewComponent(IProductCategoryQuery productCategoryQuery)
         {
-            _productQuery = productQuery;
+            _productCategoryQuery = productCategoryQuery;
         }
 
         public IViewComponentResult Invoke()
         {
-            var Products =_productQuery.GetLatestArrivals();
-            return View(Products);
+            var categories = _productCategoryQuery.GetProductCategoriesWithProducts();
+            return View(categories);
         }
+
     }
 }

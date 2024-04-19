@@ -1,21 +1,23 @@
-﻿using _01_LampshadeQuery.Contracts.ProductCategory;
+﻿using _01_LampshadeQuery.Contracts.Product;
+using _01_LampshadeQuery.Contracts.ProductCategory;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ServiceHost.ViewComponents
 {
-    public class ProductCategoryWithProductViewComponent : ViewComponent
+    public class LatestArrivalsViewComponent : ViewComponent
     {
-        private readonly IProductCategoryQuery _productCategoryQuery;
+        private readonly IProductQuery _productQuery;
 
-        public ProductCategoryWithProductViewComponent(IProductCategoryQuery productCategoryQuery)
+        public LatestArrivalsViewComponent(IProductQuery productQuery)
         {
-            _productCategoryQuery = productCategoryQuery;
+            _productQuery = productQuery;
         }
 
         public IViewComponentResult Invoke()
         {
-            var categories =_productCategoryQuery.GetProductCategoriesWithProducts();
-            return View(categories);
+            var Products = _productQuery.GetLatestArrivals();
+            return View(Products);
         }
     }
+    
 }

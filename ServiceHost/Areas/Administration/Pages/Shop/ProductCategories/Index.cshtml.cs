@@ -38,11 +38,11 @@ namespace ServiceHost.Areas.Administration.Pages.Shop.ProductCategories
             return Partial("Edit", productCategory);
         }
 
-        public IActionResult OnPostEdit(EditProductCategory command)
+        public JsonResult OnPostEdit(EditProductCategory command)
         {
             if (!ModelState.IsValid)
             {
-                return RedirectToPage("./index");
+                //    return RedirectToPage("./index");
             }
             var result = _productCategoryApplication.Edit(command);
             return new JsonResult(result);

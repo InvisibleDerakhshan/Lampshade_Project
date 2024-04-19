@@ -38,14 +38,7 @@
                     <div class="tab-content">
                         @foreach (var category in Model)
                         {
-                     @*        @if (Model.First() == category)
-                            {
-
-                            }
-                            else
-                            {
-                                
-                            } *@
+                
                             <div class="tab-pane fade show @(Model.First()==category ? "active" : "")" id="product-series-@category.Id" role="tabpanel"
                                  aria-labelledby="product-tab-1">
                                 <!--=======  single row slider wrapper  =======-->
@@ -81,7 +74,7 @@
                                                                 <span class="sale">-@product.DiscountRate%</span>
                                                             </div>
                                                         }
-                                                        <a href="single-product.html">
+                                                        <a asp-page="/Product" asp-route-id="@product.Slug">
                                                             <img src="@product.Picture" title="@product.PictureTitle" class="img-fluid" alt="@product.PictureAlt"  >
                                                         </a>
 
@@ -112,9 +105,8 @@
                                                         </div>
 
                                                         <h3 class="single-grid-product__title">
-                                                            <a href="single-product.html">
-                                                              @product.Name
-                                                            </a>
+                                                            <a asp-page="/Product" asp-route-id="@product.Slug">@product.Name</a>
+                                                          
                                                         </h3>
                                                         <p class="single-grid-product__price">
                                                             @if (product.HasDiscount)

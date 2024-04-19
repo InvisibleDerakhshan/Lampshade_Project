@@ -121,6 +121,7 @@ namespace _01_LampshadeQuery.Query
                     MetaDescription = x.MetaDescription,
                     Keywords = x.Keywords,
                     Slug = x.Slug,
+                    Picture= x.Picture,
                     Products = MapProducts(x.Products)
                 }).AsNoTracking().FirstOrDefault(x=>x.Slug == slug);
 
