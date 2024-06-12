@@ -19,8 +19,8 @@ namespace ServiceHost.Areas.Administration.Pages.Shop.Slides
         public IndexModel(ISlideApplication slideApplication)
         {
             _slideApplication = slideApplication;
+           
         }
-
 
         public void OnGet()
         {

@@ -15,5 +15,6 @@ namespace ShopManagement.Application.Contracts.Slide
         OperationResult Restore(long id);
         EditSlide GetDetails(long id);
         List<SlideViewModel> GetList();
+       
     }
 }

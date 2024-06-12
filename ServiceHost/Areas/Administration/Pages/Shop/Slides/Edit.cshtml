@@ -7,7 +7,7 @@
     <h4 class="modal-title">ویرایش اسلاید : @Model.Heading</h4>
 </div>
 
-<form asp-page="./Index" asp-page-handler="./Edit"
+<form asp-page="./Index" asp-page-handler="Edit"
       method="post"
       data-ajax="true"
       data-callback=""
@@ -18,7 +18,7 @@
             <div class="col-md-12">
                 <div class="form-group">
                     <label asp-for="Picture" class="control-label">عکس</label>
-                    <input type="url" class="form-control" asp-for="Picture" accept="image/*">
+                    <input type="file" class="form-control" asp-for="Picture" accept="image/*">
                     <span asp-validation-for="Picture" class="error"></span>
                 </div>
             </div>
