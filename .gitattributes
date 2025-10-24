@@ -1,35 +1,44 @@
-# ===============================
-# Lampshade_Project GitHub Linguist configuration
+﻿# ===============================
+# Lampshade_Project GitHub Linguist configuration (final optimized)
 # ===============================
 
-# Ignore compiled / generated / vendor files
+# 🎯 Ignore compiled / generated / vendor folders
 bin/** linguist-vendored
 obj/** linguist-vendored
 wwwroot/lib/** linguist-vendored
 wwwroot/node_modules/** linguist-vendored
 node_modules/** linguist-vendored
 wwwroot/dist/** linguist-vendored
+Migrations/** linguist-vendored
+Generated/** linguist-vendored
 
-# Ignore static resources (CSS, JS, HTML)
+# 🎯 Ignore static resources (frontend files)
 *.css linguist-vendored
 *.scss linguist-vendored
 *.sass linguist-vendored
 *.js linguist-vendored
+*.jsx linguist-vendored
+*.ts linguist-vendored
+*.tsx linguist-vendored
 *.min.js linguist-vendored
 *.map linguist-vendored
 *.html linguist-vendored
 *.htm linguist-vendored
+*.cshtml linguist-vendored
+*.razor linguist-vendored
 *.json linguist-vendored
 *.xml linguist-vendored
 
-# Ignore config/build files
+# 🎯 Ignore config and build files
 *.config linguist-vendored
 *.csproj linguist-vendored
 *.sln linguist-vendored
 *.targets linguist-vendored
 *.props linguist-vendored
+*.bat linguist-vendored
+*.cmd linguist-vendored
 
-# Ignore images/media
+# 🎯 Ignore images and static media
 *.png linguist-vendored
 *.jpg linguist-vendored
 *.jpeg linguist-vendored
@@ -37,9 +46,5 @@ wwwroot/dist/** linguist-vendored
 *.svg linguist-vendored
 *.ico linguist-vendored
 
-# Explicitly mark C# files
+# 🎯 Explicitly mark C# as primary language
 *.cs linguist-language=C#
-
-# Ignore migrations and auto-generated
-Migrations/** linguist-vendored
-Generated/** linguist-vendored
